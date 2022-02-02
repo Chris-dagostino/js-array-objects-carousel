@@ -33,26 +33,31 @@ let thumb = '';
 let active = 1;
 
 for (let i = 0; i < items.length; i++) {
-    const item = items[items.length];
-    console.log(item);
+    var oggetto = items[i];
+    console.log(oggetto);
+
+    photo = oggetto.photo;
+    title = oggetto.title;
+    text = oggetto.text;
+
 
     item += `
         <div class="item">
-            <img src="${photo[i]}" alt="">
+            <img src="${photo}" alt="">
             <div class="text">
-                <h3>${title[i]}</h3>
-                <p>${text[i]}</p>
+                <h3>${title}</h3>
+                <p>${text}</p>
             </div>
         </div>` 
     thumb += `
         <div class="thumb">
-            <img src="${items[i]}" alt="">
+            <img src="${photo}" alt="">
         </div>
     `
-    
 }
 
 itemsRef.innerHTML = item;
+
 document.getElementsByClassName('item')[active].classList.add('active');
 
 thumbsRef.innerHTML += thumb;
